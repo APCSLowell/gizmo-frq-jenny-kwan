@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class OnlinePurchaseManager
 {
   /** An ArrayList of purchased Gizmo objects,
@@ -11,7 +12,6 @@ public class OnlinePurchaseManager
   */
   public int countElectronicsByMaker(String maker)
   {
-    /* to be implemented in part (a) */
     int num = 0;
     for(Gizmo g: purchases)
       if(g.isElectronic() && g.getMaker().equals(maker))
@@ -24,18 +24,22 @@ public class OnlinePurchaseManager
   */
   public boolean hasAdjacentEqualPair()
   {
-    /* to be implemented in part (b) */
-    for(int i = 0; i < purchase.size()-1; i++)
+    for(int i = 0; i < purchases.size() - 1; i++) 
       if(purchases.get(i).equals(purchases.get(i+1)))
         return true;
     return false;
   }
+
+  /** Constructor to initialize the purchases list */
   public OnlinePurchaseManager()
   {
-    purchases = new ArrayList <Gizmo>();
+    purchases = new ArrayList<Gizmo>();
   }
+
+  /** Adds a Gizmo to the list of purchases */
   public void add(Gizmo g)
   {
     purchases.add(g);
   }
 }
+
